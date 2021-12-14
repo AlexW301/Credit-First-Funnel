@@ -248,7 +248,7 @@ document.querySelector('.q7-submit-btn').onclick = () => {
         //
         document.querySelector('.completed').style.width = '100%';
         //Send the data to firebase
-        firebase.firestore().collection("completed-funnels").add({
+        firebase.firestore().collection("credit-first-funnel").add({
             firstName: formData[6][0],
             lastName: formData[6][1],
             email: formData[6][2],
@@ -259,7 +259,8 @@ document.querySelector('.q7-submit-btn').onclick = () => {
             loanAmount: formData[3],
             employment: formData[4],
             credit: formData[5],
-            date: Date()
+            date: Date(),
+            campaign: 'Credit Campaign'
         }).then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
             // GO TO FINISH PAGE
